@@ -1,5 +1,7 @@
 package main
 
+// 定时报告时间的TCP服务器
+
 import (
     "io"
     "log"
