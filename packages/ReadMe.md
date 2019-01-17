@@ -1,2 +1,2 @@
 [Packages](https://golang.org/pkg/)  
-包示例
+包使用示例
