@@ -1,5 +1,5 @@
 # 数据结构和算法的go实现
-[数据结构与算法之美-算法代码](https://github.com/wangzheng0822/algo)
+[数据结构与算法之美-算法代码](https://github.com/wangzheng0822/algo/tree/master/go)
 
 ### 基础
 ***
