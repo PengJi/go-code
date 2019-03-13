@@ -2,16 +2,19 @@ package linkedlist
 
 import "fmt"
 
+// 单链表节点
 type ListNode struct {
 	next *ListNode
 	value interface{}
 }
 
+// 单链表
 type LinkedList struct {
 	head *ListNode
 	length uint
 }
 
+// 新建单链表节点
 func NewListNode(v interface{}) *ListNode {
 	return &ListNode{nil, v}
 }
@@ -129,7 +132,7 @@ func (this *LinkedList) DeleteNode(p *ListNode) bool {
 func (this *LinkedList) Print() {
 	cur := this.head.next
 	format := ""
-	for nil != cur {
+	for cur != nil {
 		format += fmt.Sprintf("%+v", cur.GetValue())
 		cur = cur.next
 		if nil != cur {
@@ -137,4 +140,22 @@ func (this *LinkedList) Print() {
 		}
 	}
 	fmt.Println(format)
+}
+
+// 单链表反转
+func (this *LinkedList) Reverse(){
+	if this.head == nil || this.head.next == nil || this.head.next.next == nil {
+		return
+	}
+
+	var pre *ListNode = nil
+	cur := this.head.next
+	for cur != nil {
+		tmp := cur.next
+		cur.next = pre
+		pre = cur
+		cur = tmp
+	}
+
+	this.head.next = pre
 }
