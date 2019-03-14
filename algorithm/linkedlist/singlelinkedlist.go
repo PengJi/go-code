@@ -27,6 +27,7 @@ func (this *ListNode) GetValue() interface{} {
 	return this.value
 }
 
+// 新建单链表
 func NewLinkedList() *LinkedList {
 	return &LinkedList{NewListNode(0), 0}
 }
@@ -158,4 +159,56 @@ func (this *LinkedList) Reverse(){
 	}
 
 	this.head.next = pre
+}
+
+// 判断单链表是否有环
+func (this *LinkedList) HasCycle() bool {
+	if this == nil || this.head == nil || this.head.next == nil {
+		return false
+	}
+
+	slow := this.head
+	fast := this.head
+	for fast != nil && fast.next != nil {
+		slow = slow.next
+		fast = fast.next.next
+		if slow == fast {
+			return true
+		}
+	}
+
+	return false
+}
+
+// 两个有序单链表合并
+func MergeSortedList(l1, l2 *LinkedList) *LinkedList {
+	if l1 == nil || l1.head == nil {
+		return l2
+	}
+	if l2 == nil || l2.head == nil {
+		return l1
+	}
+
+	l := &LinkedList{head: &ListNode{}}
+	cur := l.head
+	cur1 := l1.head.next
+	cur2 := l2.head.next
+	for cur1 != nil && cur2 != nil {
+		if cur1.value.(int) > cur2.value.(int) {
+			cur.next = cur2
+			cur2 = cur2.next
+		} else {
+			cur.next = cur1
+			cur1 = cur1.next
+		}
+		cur = cur.next
+	}
+
+	if cur1 != nil {
+		cur.next = cur1
+	} else if cur2 != nil {
+		cur.next = cur2
+	}
+
+	return l
 }
