@@ -212,3 +212,45 @@ func MergeSortedList(l1, l2 *LinkedList) *LinkedList {
 
 	return l
 }
+
+// 删除倒数第 N 个节点
+func (this *LinkedList) DeleteBottomN(n int) {
+	if n <= 0 || nil == this.head || nil == this.head.next {
+		return
+	}
+
+	fast := this.head
+	for i := 1; i <= n && fast != nil; i++ {
+		fast = fast.next
+	}
+
+	if nil == fast {
+		return
+	}
+
+	slow := this.head
+	for nil != fast.next {
+		slow = slow.next
+		fast = fast.next
+	}
+	slow.next = slow.next.next
+}
+
+// 获取中间节点
+func (this *LinkedList) FindMiddleNode() *ListNode {
+	if this.head == nil || this.head.next == nil {
+		return nil
+	}
+
+	if this.head.next.next == nil {
+		return this.head.next
+	}
+
+	slow, fast := this.head, this.head
+	for fast != nil && slow != nil {
+		fast = fast.next.next
+		slow = slow.next
+	}
+
+	return slow
+}

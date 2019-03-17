@@ -86,6 +86,21 @@ func TestMergeSortedList(t *testing.T) {
 
 }
 
+//func TestDeleteBottomN(t *testing.T) {
+//	l.Print()
+//	//l.DeleteBottomN(3)
+//	l.Print()
+//}
+//
+//func TestFindMiddleNode(t *testing.T) {
+//	l.DeleteBottomN(1)
+//	l.DeleteBottomN(1)
+//	l.DeleteBottomN(1)
+//	l.DeleteBottomN(1)
+//	l.Print()
+//	t.Log(l.FindMiddleNode())
+//}
+
 
 
 
