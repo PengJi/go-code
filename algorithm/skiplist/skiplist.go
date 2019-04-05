@@ -108,17 +108,16 @@ func (sl *SkipList) Insert(val int) int {
 
 //查找
 func (sl *SkipList) Find(val int) *Node {
-	if sl.length == 0 {
+	if sl != nil && sl.length == 0 {
 		return nil
 	}
 
-	cur := sl.head
+	cur := sl.head  //头结点
 	for i := sl.level - 1; i >= 0; i-- {  //每次循环向下一层
 		for cur.forwards[i] != nil{  //每次循环向右移动一步
 			if val == cur.forwards[i].val {
 				return cur.forwards[i]
 			} else if val < cur.forwards[i].val{
-				fmt.Println(cur.forwards[i].val)
 				break
 			}
 			cur = cur.forwards[i]
