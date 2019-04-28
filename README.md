@@ -9,6 +9,8 @@ go代码
 [Go语言圣经 代码](https://github.com/adonovan/gopl.io/)
 [GO 命令教程](https://github.com/hyper0x/go_command_tutorial)
 
+[aQuaYi/LeetCode-in-Go](https://juejin.im/repo/5a546c286fb9a073b8d47592)
+
 # contacts
 [季朋](www.jipeng.me)  
 jiepngpro@gmail.com
