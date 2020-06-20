@@ -15,15 +15,15 @@ func Unmarshal(data []byte, v interface{}) error
 将json反序列化成struct对象
 将json反序列化到map中
 将json反序列化到slice中
- */
+*/
 
- type User struct {
- 	Username string
- 	Password string
- 	Firends []string
- }
+type User struct {
+	Username string
+	Password string
+	Firends  []string
+}
 
-func main(){
+func main() {
 	user := User{}
 	user.Username = "Tom"
 	user.Password = "123456"
@@ -41,8 +41,8 @@ func main(){
 	}
 
 	// 将 map 转成 json 字符串
-	m := map[string]string{"id1":"name1", "id2":"name2"}
-	if mJSON, err := json.Marshal(m); err==nil {
+	m := map[string]string{"id1": "name1", "id2": "name2"}
+	if mJSON, err := json.Marshal(m); err == nil {
 		fmt.Println(string(mJSON))
 	}
 
@@ -66,4 +66,7 @@ func main(){
 	if err := json.Unmarshal([]byte(jsonMap), &mapKey); err == nil {
 		fmt.Println(mapKey)
 	}
+
+	str, _ := json.Marshal("test")
+	fmt.Println(string(str))
 }

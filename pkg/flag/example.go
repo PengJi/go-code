@@ -11,7 +11,7 @@ var (
 
 	v, V bool
 	t, T bool
-	q *bool
+	q    *bool
 
 	s string
 	p string
@@ -19,11 +19,11 @@ var (
 	g string
 )
 
-func init(){
+func init() {
 	flag.BoolVar(&h, "h", false, "help info")
 
-	flag.BoolVar(&v, "v", false,"show version")
-	flag.BoolVar(&V, "V", false,"show version and configure options")
+	flag.BoolVar(&v, "v", false, "show version")
+	flag.BoolVar(&V, "V", false, "show version and configure options")
 
 	flag.BoolVar(&t, "t", false, "test configure and exit")
 	flag.BoolVar(&T, "T", false, "test configuration, dump it and exit")
@@ -41,16 +41,12 @@ func init(){
 
 }
 
-func usage(){
-	fmt.Fprintf(os.Stderr, `nginx version: nginx/1.10.0
-Usage: nginx [-hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
-
-Options:`)
-
+func usage() {
+	fmt.Fprintf(os.Stderr, `nginx version: nginx/1.10.0 Usage: nginx [-hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives] Options:`)
 	flag.PrintDefaults()
 }
 
-func main(){
+func main() {
 	flag.Parse()
 
 	if h {

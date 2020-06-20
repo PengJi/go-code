@@ -8,19 +8,19 @@ import (
 )
 
 type Nginx struct {
-	Port int `yaml:"Port"`
+	Port    int    `yaml:"Port"`
 	LogPath string `yaml:LogPath`
-	Path string `yaml:"Path"`
+	Path    string `yaml:"Path"`
 }
 
 type Config struct {
-	Name string `yaml:"SiteName"`
-	Addr string `yaml:"SiteAddr"`
-	Https string `yaml:"Https"`
-	SiteNginx Nginx `yaml:"Nginx"`
+	Name      string `yaml:"SiteName"`
+	Addr      string `yaml:"SiteAddr"`
+	Https     string `yaml:"Https"`
+	SiteNginx Nginx  `yaml:"Nginx"`
 }
 
-func main(){
+func main() {
 	var setting Config
 	config, err := ioutil.ReadFile("./example.yaml")
 	if err != nil {

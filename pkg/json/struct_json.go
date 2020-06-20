@@ -7,17 +7,24 @@ import (
 
 type addr struct {
 	Province string `json:"province"`
-	City string `json:"city"`
+	City     string `json:"city"`
 }
 
 type stu struct {
 	Name string `json:"name"`
-	Age int `json:"age"`
-	Addr addr `json:"addr"`
+	Age  int    `json:"age"`
+	Addr addr   `json:"addr"`
 }
 
 func main() {
-	var xm = stu{Name:"zhangsan", Age:18, Addr:addr{Province:"prov1", City:"city1"}}
+	var xm = stu{
+		Name: "zhangsan",
+		Age:  18,
+		Addr: addr{
+			Province: "prov1",
+			City:     "city1",
+		},
+	}
 
 	js, err := json.Marshal(xm)
 	if err != nil {
