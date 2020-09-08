@@ -7,7 +7,7 @@ import (
 )
 
 type Shop struct {
-	Verbose bool
+	Verbose        bool
 	Cakes          int           // number of cakes to bake
 	BakeTime       time.Duration // time to bake one cake
 	BakeStdDev     time.Duration // standard deviation of baking time

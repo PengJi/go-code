@@ -25,7 +25,7 @@ import (
 func main() {
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
-		thumb, err := thumbnail.ImageFile(input.Text())
+		thumb, err := ImageFile(input.Text())
 		if err != nil {
 			log.Print(err)
 			continue

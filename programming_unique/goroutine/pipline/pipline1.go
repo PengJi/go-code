@@ -8,7 +8,7 @@ func main(){
 
 	//counter
 	go func(){
-		for x:= 0; ; x++{
+		for x:= 0; ; x++ {
 			naturals <- x
 		}
 	}()

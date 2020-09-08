@@ -12,20 +12,20 @@ type safeCounter struct {
 
 func (sc *safeCounter) Increment() {
 	sc.Lock()
+	defer sc.Unlock()
 	sc.number++
-	sc.Unlock()
 }
 
 func (sc *safeCounter) Decrement() {
 	sc.Lock()
+	defer sc.Unlock()
 	sc.number--
-	sc.Unlock()
 }
 
 func (sc *safeCounter) getNumber() int {
 	sc.Lock()
+	defer sc.Unlock()
 	number := sc.number
-	sc.Unlock()
 	return number
 }
 

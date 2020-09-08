@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	once := sync.Once{}
+	var once sync.Once
 	done := make(chan bool)
 
 	for i := 0; i < 10; i++ {

@@ -7,8 +7,9 @@ import (
 
 func main() {
 	wg := sync.WaitGroup{}
+	// var wg sync.WaitGroup
+	wg.Add(5)
 	for i := 0; i <= 5; i++ {
-		wg.Add(1)
 		go func(i int) {
 			defer wg.Done()
 			fmt.Println("Work done for ", i)
